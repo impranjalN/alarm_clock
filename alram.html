@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alarm Clock</title>
+  <link rel="stylesheet" href ="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+  <audio id="alarmSound" src="./mixkit-retro-game-emergency-alarm-1000.wav" preload="auto"></audio>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Alarm Clock</h1>
+        <div class="clock" id="clockDisplay"></div>
+        <div class="form-group">
+          <label for="alarmDateTime">Set Date and Time:</label>
+          <input type="datetime-local" id="alarmDateTime" class="form-control">
+        </div>
+        <div>
+          <button id="setAlarmBtn" class="btn btn-primary">Set Alarm</button>
+        </div>
+      </div>
+      <div class="col">
+        <div id="alarmList">
+          <h3>Alarm List:</h3>
+          <div id="alarms"></div>
+          <div class="stopDiv">
+            <button class="stopBtn" style="display: none;" onclick="stopAlarm()">Stop</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+body {
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: black; /* Set background color to black */
+  }
+  
+  .clock {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 2rem;
+  }
+  
+  #setAlarmBtn {
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-bottom: 10px;
+  }
+  .stopBtn{
+    margin: 10px 0;
+    background-color: red;
+    border-color: red;
+    color:white;
+  }
+
+  .stopDiv{
+    display: flex;
+    justify-content: center;
+  }
+  
+  #alarmList {
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: black; /* Set background color to black */
+  }
+  
+  .alarm-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid white;
+  }
+  
