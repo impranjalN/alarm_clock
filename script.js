@@ -1,6 +1,7 @@
 // Define the alarmList variable outside the setAlarm function
 const alarmList = document.getElementById("alarms");
 const stopDiv = document.querySelector('.stopBtn')
+let alarmTimeout;
 // Function to update the live clock display
 function updateClock() {
   const clockDisplay = document.getElementById("clockDisplay");
@@ -46,26 +47,32 @@ function setAlarm() {
   // display stop btn
   // const stopDiv = document.querySelector('.stopBtn')
   // Set a timeout to trigger the alert at the specified alarm time
-  setTimeout(function () {
+  if (alarmTimeout) {
+    clearTimeout(alarmTimeout);
+  }
+  alarmTimeout = setTimeout(function () {
     alert("Alarm on time!");
     // Your logic to play the alarm sound or take any other actions when the alarm goes off on time
     const alarmSound = document.getElementById("alarmSound");
     alarmSound.play();
-    stopDiv.style.display = 'block'
+    stopDiv.style.display = 'block';
   }, timeUntilAlarm);
+  
 }
 
 // Function to delete an alarm
 function deleteAlarm(event) {
+  clearTimeout(alarmTimeout);
   const alarmItem = event.target.parentElement;
   alarmList.removeChild(alarmItem);
 }
 
 function stopAlarm(){
-  alarmSound.pause()
-  stopDiv.style.display = 'none'
-  const alarm = document.querySelector('.alarm-item')
-  alarm.remove()
+  //const alarm = document.querySelector('.alarm-item')
+  //alarm.remove()
+  const alarmSound = document.getElementById("alarmSound");
+  alarmSound.pause();
+  stopDiv.style.display = 'none';
 }
 
 // Set the click event for the "Set Alarm" button
